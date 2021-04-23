@@ -18,7 +18,19 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: 'babel-loader'
+      },
+      {
+        test: /\.s?css$/,
+        use:[
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.html$/,
+        use: 'html-loader'
       }
     ]
   },
@@ -26,7 +38,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       // favicon: ''
       inject: 'body',
-      title: 'PlatziConf-Merch',
+      title: 'Platzi-Conf-Merch',
       template: path.resolve(__dirname, './public/index.html'),
       filename: 'index.html'
     })

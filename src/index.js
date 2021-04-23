@@ -1,1 +1,2 @@
-console.log('hola chamo')
+import './scss/App.scss'
+console.log('hola chamo');
