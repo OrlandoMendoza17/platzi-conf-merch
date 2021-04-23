@@ -47,9 +47,19 @@
     &--icon{
       width: 20px;
       height: 17px;
-      // fill: $addToCart-icon-color;
-      fill: $item-color;
+      fill: $transparent-light-color;
+      transition: .3s;
     }
+  }
+  &__addToCart.selected{
+    opacity: 1;
+
+    &--icon{
+      fill: $addToCart-icon-color;
+    }
+  }
+  &__addToCart.selected &__addToCart--icon{
+    fill: $addToCart-icon-color;
   }
   
   &__details{
