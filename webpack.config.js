@@ -1,11 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: '[name].[contenthash].js'
   },
   context: __dirname,
   mode: 'development',
@@ -23,7 +24,7 @@ module.exports = {
       {
         test: /\.s?css$/,
         use:[
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
         ]
@@ -33,7 +34,7 @@ module.exports = {
         use: 'html-loader'
       },
       {
-        test: /\.(jpg|jpeg|png|gif|jfif|woff|eot|ttf|svg|mp4|webm)$/,
+        test: /\.(jpg|jpeg|png|gif|jfif|woff|eot|ttf|svg|mp4|webp)$/,
         use: {
           loader: 'url-loader',
           options: {
@@ -41,7 +42,7 @@ module.exports = {
             fallback: {
               loader: "file-loader",
               options: {
-                name: "[name].[ext]",
+                name: "[name].[contenthash].[ext]",
                 // name: "../[path][name].[ext]",
               }
             }
@@ -57,6 +58,9 @@ module.exports = {
       title: 'Platzi-Conf-Merch',
       template: path.resolve(__dirname, './public/index.html'),
       filename: 'index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css'
     })
   ]
 }

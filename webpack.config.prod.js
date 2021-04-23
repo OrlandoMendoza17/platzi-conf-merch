@@ -13,14 +13,6 @@ module.exports = {
   resolve:{
     extensions: ['.js', '.jsx']
   },
-  devServer:{
-    contentBase: path.join(__dirname, 'dist'),
-    historyApiFallback: true,
-    compress: true,
-    publicPath: '/',
-    open: true,
-    port: 8080
-  },
   module:{
     rules:[
       {
@@ -41,7 +33,7 @@ module.exports = {
         use: 'html-loader'
       },
       {
-        test: /\.(jpg|jpeg|png|gif|jfif|woff|eot|ttf|svg|mp4|webp)$/,
+        test: /\.(jpg|jpeg|png|gif|jfif|woff|eot|ttf|svg|mp4|webm)$/,
         use: {
           loader: 'url-loader',
           options: {
