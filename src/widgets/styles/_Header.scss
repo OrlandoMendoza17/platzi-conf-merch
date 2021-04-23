@@ -1,0 +1,31 @@
+.Header{
+  padding: 10px 20px;
+  background-color: $brand-primary-color;
+  display: flex;
+  justify-content: space-between;
+  
+  
+  &__brand-icon{
+    width: 130px;
+    
+    &--image{
+      width: 100%;
+    }
+  }
+  
+  &__cart{
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-items: center;
+    align-items: center;
+    font-weight: bold;
+    color: $header-color;
+    gap: 5px;
+    
+    &--icon{
+      width: 25px;
+      fill: $button-primary-color;
+    }
+  }
+}

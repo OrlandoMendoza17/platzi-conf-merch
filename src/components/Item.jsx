@@ -1,13 +1,14 @@
-import React, {useState} from 'react';
-import xbox from '../assets/images/D_NQ_NP_635076-MLV42914357875_072020-W.webp';
+import React, {useState, useContext} from 'react';
+import AppContext from '../context/AppContext';
 import Heart from './icons/Heart';
 
 const Item = () => {
-  
+  const {addToCart} = useContext(AppContext)
   const [favorite, setFavorite] = useState(false)
   
   const handleClick = () =>{
     setFavorite(!favorite)
+    // addToCart()
   }
   
   return (

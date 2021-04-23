@@ -15,7 +15,7 @@
   
   &__cover{
     position: relative;
-    width: 284px;
+    max-width: 284px;
     height: 284px;
     border-bottom: 1px solid #eaeaea;
     
@@ -42,7 +42,6 @@
     justify-content: center;
     align-items: center;
     transition: .3s;
-    opacity: 0;
     
     &--icon{
       width: 20px;
@@ -55,11 +54,11 @@
     opacity: 1;
 
     &--icon{
-      fill: $addToCart-icon-color;
+      fill: $button-primary-color;
     }
   }
   &__addToCart.selected &__addToCart--icon{
-    fill: $addToCart-icon-color;
+    fill: $button-primary-color;
   }
   
   &__details{
@@ -85,15 +84,22 @@
       transition: .3s;
       padding: 5px;
       border-radius: 5px;
-      background-color: rgba(0, 102, 255, 0.75);
+      background-color: $button-primary-color;
       justify-self: end;
       color: $secondary-font-color;
       opacity: 0;
     }
     
   }
-  &:hover &__addToCart,
-  &:hover &__details--state{
-    opacity: 1;
+  
+  @media screen and (min-width: 768px){
+    &__addToCart{
+      opacity: 0;
+    }
+    
+    &:hover &__addToCart,
+    &:hover &__details--state{
+      opacity: 1;
+    }
   }
 }
