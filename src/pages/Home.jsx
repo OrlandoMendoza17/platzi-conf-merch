@@ -3,9 +3,18 @@ import Item from '../components/Item'
 
 const Home = () => {
   return (
-    <div>
-      <Item/>
-    </div>
+    <main>
+      <section className="item-list">
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
+      </section>
+    </main>
   )
 }
 

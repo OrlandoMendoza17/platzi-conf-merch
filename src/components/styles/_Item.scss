@@ -1,12 +1,23 @@
 .Item{
-  max-width: 300px;
+  position: relative;
+  max-width: 284px;
   background-color: $item-color;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px 0px, rgba(0, 0, 0, 0.1) 0px -1px 2px 0px;
+  transition: .3s;
+  
+  &:hover{
+    box-shadow: 0 25px 20px 0 rgba(0,0,0, 0.16), 0 -1px 2px 0 rgba(0,0,0, 0.16);
+    &__details--state{
+      opacity: 1;
+    }
+  }
+  
   &__cover{
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 284px;
+    height: 284px;
+    border-bottom: 1px solid #eaeaea;
     
     &--image{
       position: absolute;
@@ -14,23 +25,65 @@
       left: 0%;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+    }
+  }
+  
+  &__addToCart{
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    background-color: $transparent-light-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    opacity: 0;
+    
+    &--icon{
+      width: 20px;
+      height: 17px;
+      // fill: $addToCart-icon-color;
+      fill: $item-color;
     }
   }
   
   &__details{
     padding: 20px;
     color: $primary-font-color;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
     
     &--price{
       font-size: 2.4rem;
       font-weight: bold;
       line-height: 1;
+      justify-self: start;
     }
-    &--title{
+    &--title,
+    &--state{
       font-size: 1.4rem;
       font-weight: 400;
       line-height: 1.3;
     }
+    &--state{
+      transition: .3s;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: rgba(0, 102, 255, 0.75);
+      justify-self: end;
+      color: $secondary-font-color;
+      opacity: 0;
+    }
+    
+  }
+  &:hover &__addToCart,
+  &:hover &__details--state{
+    opacity: 1;
   }
 }

@@ -1,5 +1,8 @@
 @import './lib/variables';
 @import './lib/reset';
 
+//Pages Styles
+@import '../pages/styles/Home';
+
 //Components Styles
-@import '../components/styles/Item'
+@import '../components/styles/Item';
