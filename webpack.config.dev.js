@@ -39,6 +39,22 @@ module.exports = {
       {
         test: /\.html$/,
         use: 'html-loader'
+      },
+      {
+        test: /\.(jpg|jpeg|png|gif|jfif|woff|eot|ttf|svg|mp4|webm)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            fallback: {
+              loader: "file-loader",
+              options: {
+                name: "[name].[ext]",
+                // name: "../[path][name].[ext]",
+              }
+            }
+          }
+        }
       }
     ]
   },
