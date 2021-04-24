@@ -16,5 +16,15 @@
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+    gap: 5px;
+    
+    &--icon-up,
+    &--icon-down{
+      width: 10px;
+      fill: $secondary-font-color;
+    }
+    &--icon-down{
+      transform: rotateZ(180deg);
+    }
   }
 }

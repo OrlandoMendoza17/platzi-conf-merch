@@ -1,6 +1,8 @@
 import React, {useContext} from 'react'
 import Button from '../widgets/Button';
 import AppContext from '../context/AppContext';
+import ArrowUp from '../components/icons/ArrowUp'
+import ArrowDown from '../components/icons/ArrowDown'
 
 const CheckoutItem = (product) => {
   const {title, price, count, image} = product;
@@ -23,9 +25,12 @@ const CheckoutItem = (product) => {
         <span className="CheckoutItem__details--price">{price}$ x {count} {count !== 1? 'unidades' : 'unidad'}</span>
       </div>
       <div className="CheckoutItem__count">
-        <Button handleClick={handleIncreaseCount}>Subir</Button>
-        <span>{count}</span>
-        <Button handleClick={handleDecreaseCount}>Bajar</Button>
+        <Button handleClick={handleIncreaseCount}>
+          <ArrowUp className="CheckoutItem__count--icon-up"/>
+        </Button>
+        <Button handleClick={handleDecreaseCount}>
+          <ArrowUp className="CheckoutItem__count--icon-down"/>
+        </Button>
       </div>
     </div>
   )

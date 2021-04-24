@@ -3,8 +3,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Layout from './components/Layout';
 import AppContext from './context/AppContext';
 import useInitialState from './hooks/useInitialState';
-import Checkout from './pages/Checkout';
 import Home from './pages/Home';
+import Checkout from './pages/Checkout';
+import Information from './pages/Information';
 import NotFound from './pages/NotFound';
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/checkout" component={Checkout} />
+            <Route exact path="/checkout/information" component={Information} />
             <Route component={NotFound} />
           </Switch>
         </Layout>
