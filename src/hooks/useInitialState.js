@@ -23,20 +23,17 @@ const useInitialState = () =>{
     const product = {...item, count: item.count+1}
     const newState = {
       ...state, 
-      cart: state.cart.map((item)=>{
-        return item.id === product.id ? product : item
-      })
+      cart: state.cart.map(item => item.id === product.id ? product : item)
     }
     setState(newState)
     saveState(newState)
   }
+  
   const decreaseCount = (item) =>{
-    const product = {...item, count: item.count > 1  ? item.count-1 : item.count}
+    const product = {...item, count: (item.count > 1)? item.count-1 : item.count}
     const newState = {
       ...state, 
-      cart: state.cart.map((item)=>{
-        return item.id === product.id ? product : item
-      })
+      cart: state.cart.map(item => item.id === product.id ? product : item)
     }
     setState(newState)
     saveState(newState)

@@ -5,11 +5,15 @@
 @import '../pages/styles/Home';
 @import '../pages/styles/NotFound';
 @import '../pages/styles/Checkout';
+@import '../pages/styles/Information';
 
 //Components Styles
 @import '../components/styles/Item';
 @import '../components/styles/CheckoutItem';
+@import '../components/styles/ListItem';
+@import '../components/styles/ContactInformationForm';
 
 //Widgets Styles
 @import '../widgets/styles/Header';
 @import '../widgets/styles/Button';
+@import '../widgets/styles/Input';

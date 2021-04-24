@@ -1,0 +1,55 @@
+.Information{
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+
+  @media screen and (min-width: 768px){
+    grid-template-columns: 1fr minmax(100px, 400px);
+  }
+  
+  &__contact{
+    display: grid;
+    gap: 10px;
+
+    padding: 20px;
+    border-radius: 10px;
+    background-color: $item-color;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px 0px, rgba(0, 0, 0, 0.1) 0px -1px 2px 0px;
+    
+    @media screen and (min-width: 768px){
+      grid-template-columns: minmax(100px, 600px);
+      justify-self: end;
+    }
+  }
+  
+  &__bill{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: $item-color;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px 0px, rgba(0, 0, 0, 0.1) 0px -1px 2px 0px;
+    align-self: start;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 5px;
+    
+    &--items{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 5px;
+    }
+    
+    &--price{
+      padding: 10px;
+      padding-right: 25px;
+      font-size: 2rem;
+      text-align: end;
+    }
+    button{
+      padding: 10px;
+      width: 100%;
+      font-weight: 700;
+    }
+  }
+}

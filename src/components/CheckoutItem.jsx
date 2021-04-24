@@ -1,18 +1,21 @@
 import React, {useContext} from 'react'
 import Button from '../widgets/Button';
 import AppContext from '../context/AppContext';
-import ArrowUp from '../components/icons/ArrowUp'
-import ArrowDown from '../components/icons/ArrowDown'
+import ArrowUp from '../components/icons/ArrowUp';
 
 const CheckoutItem = (product) => {
   const {title, price, count, image} = product;
-  const {increaseCount, decreaseCount} = useContext(AppContext)
+  const {increaseCount, decreaseCount, removeFromCart} = useContext(AppContext)
   
   const handleIncreaseCount = () =>{
     increaseCount(product)
   }
   const handleDecreaseCount = () =>{
-    decreaseCount(product)
+    if (product.count !== 1) {
+      decreaseCount(product)
+    }else{
+      removeFromCart(product)
+    }
   }
   
   return (
