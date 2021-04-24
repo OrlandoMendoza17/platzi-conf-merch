@@ -1,0 +1,20 @@
+.CheckoutItem{
+  padding: 20px;
+  border-radius: 10px;
+  background-color: $item-color;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px 0px, rgba(0, 0, 0, 0.1) 0px -1px 2px 0px;
+  transition: .3s;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  
+  &__details{
+    align-self: center;
+  }
+  
+  &__count{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}

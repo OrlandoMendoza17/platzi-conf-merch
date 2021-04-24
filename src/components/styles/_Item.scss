@@ -46,7 +46,7 @@
     &--icon{
       width: 20px;
       height: 17px;
-      fill: $transparent-light-color;
+      fill: $transparent-dark-color;
       transition: .3s;
     }
   }
@@ -54,11 +54,11 @@
     opacity: 1;
 
     &--icon{
-      fill: $button-primary-color;
+      fill: $primary-button-color;
     }
   }
   &__addToCart.selected &__addToCart--icon{
-    fill: $button-primary-color;
+    fill: $primary-button-color;
   }
   
   &__details{
@@ -84,7 +84,7 @@
       transition: .3s;
       padding: 5px;
       border-radius: 5px;
-      background-color: $button-primary-color;
+      background-color: $primary-button-color;
       justify-self: end;
       color: $secondary-font-color;
       opacity: 0;

@@ -3,9 +3,13 @@
 
 //Pages Styles
 @import '../pages/styles/Home';
+@import '../pages/styles/NotFound';
+@import '../pages/styles/Checkout';
 
 //Components Styles
 @import '../components/styles/Item';
+@import '../components/styles/CheckoutItem';
 
 //Widgets Styles
 @import '../widgets/styles/Header';
+@import '../widgets/styles/Button';

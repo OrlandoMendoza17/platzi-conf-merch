@@ -1,20 +1,16 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Item from '../components/Item'
+import AppContext from '../context/AppContext'
 import Header from '../widgets/Header'
 
 const Home = () => {
+  const {state:{ products }} = useContext(AppContext)
   return (
     <main>
-      <Header/>
       <section className="item-list">
-        <Item/>
-        <Item/>
-        <Item/>
-        <Item/>
-        <Item/>
-        <Item/>
-        <Item/>
-        <Item/>
+        {products.map(product =>(
+          <Item {...product} key={product.id}/>
+        ))}
       </section>
     </main>
   )

@@ -1,0 +1,31 @@
+.Checkout{
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  
+  @media screen and (min-width: 768px){
+    grid-template-columns: 1fr minmax(100px, 400px);
+  }
+  
+  &__list{
+    display: grid;
+    gap: 10px;
+    
+    @media screen and (min-width: 768px){
+      grid-template-columns: minmax(100px, 500px);
+      justify-self: end;
+    }
+  }
+  
+  &__bill{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: $item-color;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px 0px, rgba(0, 0, 0, 0.1) 0px -1px 2px 0px;
+    
+    @media screen and (min-width: 768px){
+      justify-self: unset;
+    }
+  }
+}

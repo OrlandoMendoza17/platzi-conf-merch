@@ -6,6 +6,8 @@ export default {
       'image': 'https://arepa.s3.amazonaws.com/camiseta.png',
       'title': 'Camiseta',
       'price': 25,
+      'used': true,
+      'count': 0,
       'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     },
     {
@@ -13,6 +15,8 @@ export default {
       'image': 'https://arepa.s3.amazonaws.com/mug.png',
       'title': 'Mug',
       'price': 10,
+      'used': false,
+      'count': 0,
       'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     },
     {
@@ -20,6 +24,8 @@ export default {
       'image': 'https://arepa.s3.amazonaws.com/pin.png',
       'title': 'Pin',
       'price': 4,
+      'used': true,
+      'count': 0,
       'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     },
     {
@@ -27,6 +33,8 @@ export default {
       'image': 'https://arepa.s3.amazonaws.com/stickers1.png',
       'title': 'Stickers',
       'price': 2,
+      'used': false,
+      'count': 0,
       'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     },
     {
@@ -34,6 +42,8 @@ export default {
       'image': 'https://arepa.s3.amazonaws.com/stickers2.png',
       'title': 'Stickers',
       'price': 2,
+      'used': true,
+      'count': 0,
       'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     },
     {
@@ -41,6 +51,8 @@ export default {
       'image': 'https://arepa.s3.amazonaws.com/hoodie.png',
       'title': 'Hoodie',
       'price': 35,
+      'used': false,
+      'count': 0,
       'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     },
   ],
