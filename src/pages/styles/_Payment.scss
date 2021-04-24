@@ -1,4 +1,4 @@
-.Information{
+.Payment{
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr;
@@ -8,7 +8,7 @@
     grid-template-columns: 1fr minmax(100px, 400px);
   }
   
-  &__contact{
+  &__paypal{
     display: grid;
     gap: 10px;
 
