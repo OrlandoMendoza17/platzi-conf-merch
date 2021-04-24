@@ -5,52 +5,62 @@ import {getState, saveState} from '../utils/storageState';
 const savedState = getState()
 
 const useInitialState = () =>{
-  const stateToUse = savedState? savedState : initialState
+  const stateToUse = savedState? savedState : initialState;
   const [ state, setState ] = useState(stateToUse)
+  
+  const setAndSave = (state) =>{
+    setState(state)
+    saveState(state)
+  } 
   
   const addToCart = (item) =>{
     const product = { ...item, count: 1 }
-    
-    const newState = {
+    setAndSave({
       ...state, cart:[...state.cart, product]
-    }
-    setState(newState)
-    saveState(newState)
+    })
+  }
+  
+  const addBuyer = (buyer) =>{
+    setAndSave({
+      ...state, buyer
+    })
+  }
+  
+  const addOrder = (order) =>{
+    setAndSave({
+      ...state,
+      orders: [...state.orders, order]
+    })
   }
   
   const increaseCount = (item) =>{
-    debugger
     const product = {...item, count: item.count+1}
-    const newState = {
+    setAndSave({
       ...state, 
       cart: state.cart.map(item => item.id === product.id ? product : item)
-    }
-    setState(newState)
-    saveState(newState)
+    })
   }
   
   const decreaseCount = (item) =>{
     const product = {...item, count: (item.count > 1)? item.count-1 : item.count}
-    const newState = {
+    setAndSave({
       ...state, 
       cart: state.cart.map(item => item.id === product.id ? product : item)
-    }
-    setState(newState)
-    saveState(newState)
+    })
   }
   
   const removeFromCart = (item) =>{
-    const newState = {
+    setAndSave({
       ...state,
       cart: state.cart.filter(product => product.id !== item.id)
-    }
-    setState(newState)
-    saveState(newState)
+    })
   }
   
   return {
     state,
     addToCart,
+    addBuyer,
+    addOrder,
     removeFromCart,
     increaseCount,
     decreaseCount,
