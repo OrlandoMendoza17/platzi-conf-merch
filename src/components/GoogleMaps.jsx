@@ -5,7 +5,7 @@ const GoogleMaps = () => {
   
   const mapContainerStyle = {
     width: '100%',
-    height: '75vh'
+    height: '100%'
   };
   
   const defaultCenter = {

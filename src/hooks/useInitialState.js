@@ -27,8 +27,11 @@ const useInitialState = () =>{
   }
   
   const addOrder = (order) =>{
+    debugger
     setAndSave({
       ...state,
+      buyer: {}, 
+      cart:[],
       orders: [...state.orders, order]
     })
   }
