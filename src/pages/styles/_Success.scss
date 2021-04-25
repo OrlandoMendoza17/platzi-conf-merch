@@ -1,0 +1,12 @@
+.Success{
+  padding: 20px;
+  
+  &__title{
+    padding-bottom: 10px;
+  }
+  &__message{
+    color: $header-color;
+    padding-left: 10px;
+    margin-bottom: 20px;
+  }
+}

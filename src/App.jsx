@@ -8,6 +8,7 @@ import Checkout from './pages/Checkout';
 import Information from './pages/Information';
 import NotFound from './pages/NotFound';
 import Payment from './pages/Payment';
+import Success from './pages/Success';
 
 const App = () => {
   const state = useInitialState()
@@ -20,6 +21,7 @@ const App = () => {
             <Route exact path="/checkout" component={Checkout} />
             <Route exact path="/information" component={Information} />
             <Route exact path="/payment" component={Payment} />
+            <Route exact path="/success" component={Success} />
             <Route component={NotFound} />
           </Switch>
         </Layout>
