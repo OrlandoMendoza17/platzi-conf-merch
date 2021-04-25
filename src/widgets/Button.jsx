@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Button = ({handleClick, disabled, children}) => {
+const Button = ({color, handleClick, disabled, children}) => {
   return (
     <button 
-      className="Button"
+      className={`Button ${color? color : ''}`}
       disabled={disabled}
       onClick={handleClick} 
     >

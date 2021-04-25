@@ -1,10 +1,12 @@
-import React, {useContext} from 'react'
+import React, {useState, useContext} from 'react'
 import Button from '../widgets/Button';
 import AppContext from '../context/AppContext';
 import ArrowUp from '../components/icons/ArrowUp';
+import Modal from '../widgets/Modal';
 
 const CheckoutItem = (product) => {
   const {title, price, count, image} = product;
+  const [warning, setWarning] = useState(false)
   const {increaseCount, decreaseCount, removeFromCart} = useContext(AppContext)
   
   const handleIncreaseCount = () =>{
@@ -14,7 +16,7 @@ const CheckoutItem = (product) => {
     if (product.count !== 1) {
       decreaseCount(product)
     }else{
-      removeFromCart(product)
+      setWarning(true) 
     }
   }
   
@@ -35,6 +37,14 @@ const CheckoutItem = (product) => {
           <ArrowUp className="CheckoutItem__count--icon-down"/>
         </Button>
       </div>
+      {warning &&
+        <Modal 
+          size="small"
+          handleButton1={()=> setWarning(false)}
+          handleButton2={()=> removeFromCart(product)}
+          message="¿Estás seguro que quieres eliminar este item?"
+        />
+      }
     </div>
   )
 }

@@ -1,7 +1,13 @@
-    
 .Button{
   padding: 5px;
   border-radius: 5px;
   background-color: $primary-button-color;
   color: $secondary-font-color;
+  
+  &.success{
+    background-color: $success-color;
+  }
+  &.danger{
+    background-color: $danger-color;
+  }
 }

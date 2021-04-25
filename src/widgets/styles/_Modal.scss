@@ -1,0 +1,48 @@
+.Modal{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-color: $transparent-dark-color;
+  
+  &.small{
+    grid-template-columns: minmax(auto, 300px);
+  }
+  &.medium{
+    grid-template-columns: minmax(auto, 480px);
+  }
+  &.large{
+    grid-template-columns: minmax(auto, 768px);
+  }
+  &__inner{
+    padding: 15px;
+    border-radius: 10px;
+    background-color: $item-color;
+    z-index: 999;
+    
+    &--content{
+      font-weight: bold;
+      text-align: center;
+      padding: 10px 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 10px;
+    }
+    
+    &--button{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 5px;      
+    }
+    &--buttons{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;      
+    }
+  }
+}
