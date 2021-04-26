@@ -1,6 +1,7 @@
 .Success{
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(auto, 576px);
+  justify-content: center;
   grid-template-rows: calc(100vh - 57px) 100vh;
   gap: 15px;
   

@@ -11,7 +11,7 @@ const Information = () => {
     return (
       <main className="Information">
         <section className="Information__contact">
-          <h1>Información de Contacto:</h1>
+          <h1 className="Information__contact--title">Información de Contacto:</h1>
           <ContactInformationForm/>
         </section>
         <Bill/>

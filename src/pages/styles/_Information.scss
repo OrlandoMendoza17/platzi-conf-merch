@@ -1,10 +1,12 @@
 .Information{
-  padding: 20px;
+  padding: 20px 10px;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(auto, 576px);
+  justify-content: center;
   gap: 15px;
-
+  
   @media screen and (min-width: 768px){
+    padding: 20px;
     grid-template-columns: 1fr minmax(100px, 400px);
   }
   
@@ -17,9 +19,16 @@
     background-color: $item-color;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px 0px, rgba(0, 0, 0, 0.1) 0px -1px 2px 0px;
     
+    &--title{
+      font-size: 2rem;
+    }
+    
     @media screen and (min-width: 768px){
       grid-template-columns: minmax(100px, 600px);
       justify-self: end;
+      &--title{
+        font-size: 2.4rem;
+      }
     }
   }
 }
