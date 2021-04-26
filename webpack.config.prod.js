@@ -1,17 +1,31 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: '[name].[contenthash].js',
+    publicPath: '/'
   },
   context: __dirname,
-  mode: 'development',
-  devtool: 'source-map',
+  mode: 'production',
   resolve:{
     extensions: ['.js', '.jsx']
+  },
+  optimization:{
+    minimize: true,
+    minimizer:[
+      new CssMinimizerPlugin(),
+      new TerserPlugin(),
+    ],
+    splitChunks:{
+      chunks: 'all'
+    }
   },
   module:{
     rules:[
@@ -23,7 +37,7 @@ module.exports = {
       {
         test: /\.s?css$/,
         use:[
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
         ]
@@ -41,7 +55,7 @@ module.exports = {
             fallback: {
               loader: "file-loader",
               options: {
-                name: "[name].[ext]",
+                name: "[name].[contenthash].[ext]",
                 // name: "../[path][name].[ext]",
               }
             }
@@ -51,12 +65,16 @@ module.exports = {
     ]
   },
   plugins:[
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].[contenthash].css'
+    }),
     new HtmlWebpackPlugin({
       // favicon: ''
       inject: 'body',
       title: 'Platzi-Conf-Merch',
       template: path.resolve(__dirname, './public/index.html'),
       filename: 'index.html'
-    })
+    }),
+    new CleanWebpackPlugin()
   ]
 }
