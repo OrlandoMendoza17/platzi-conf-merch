@@ -13,7 +13,7 @@ const GoogleMaps = () => {
   }
   
   return (
-    <LoadScript googleMapsApiKey="AIzaSyDc1LMnouevi7fXU6xFkzSvNavoQxkcThQ">
+    <LoadScript googleMapsApiKey={process.env.googleMapsApiKey}>
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={17}

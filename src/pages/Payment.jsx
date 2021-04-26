@@ -11,7 +11,7 @@ const Payment = () => {
   const history = useHistory()
   
   const options = {
-    clientId: "AUcXiI2laOs-B9OpOYZN7gt08mwfZY67zJTbDjW3WpTBqmh0kBhIdjMgsIhGJQLcLuvEGrc4s1jFzQNJ",
+    clientId: process.env.clientId,
   }
   
   const handlePaymentSuccess = (details, data) =>{
