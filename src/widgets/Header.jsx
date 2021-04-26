@@ -1,6 +1,6 @@
-import React, {useState, useContext} from 'react'
+import React, { useContext} from 'react'
 import {Link} from 'react-router-dom'
-import brand_image from '../assets/images/brand-image.png'
+// import brand_image from '../assets/images/brand-image.png'
 import Cart from '../components/icons/Cart'
 import AppContext from '../context/AppContext'
 
@@ -10,7 +10,7 @@ const Header = () => {
     <header className="Header">
       <figure className="Header__brand-icon">
         <Link to="/">
-          <img className="Header__brand-icon--image" src={brand_image} alt=""/>
+          <img className="Header__brand-icon--image" src="https://i.imgur.com/uhl8euS.png" alt="brand-logo"/>
         </Link>
       </figure>
       <Link to="/checkout" className="Header__cart">
