@@ -6,7 +6,6 @@ const Product = ({product}) => {
   const {title, image, price, used} = product;
   const {addToCart, removeFromCart, state:{cart}} = useContext(AppContext)
   const [favorite, setFavorite] = useState(false)
-  console.log(cart)
   
   useEffect(() => {
     const isFavorite = !!cart.find(item => item.id === product.id)
