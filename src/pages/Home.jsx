@@ -1,6 +1,6 @@
-import React, {useContext} from 'react'
-import Item from '../components/Item'
-import AppContext from '../context/AppContext'
+import React, {useContext} from 'react';
+import Product from '../components/Product';
+import AppContext from '../context/AppContext';
 
 const Home = () => {
   const {state:{ products }} = useContext(AppContext)
@@ -8,11 +8,11 @@ const Home = () => {
     <main>
       <section className="item-list">
         {products.map(product =>(
-          <Item {...product} key={product.id}/>
+          <Product product={product} key={product.id}/>
         ))}
       </section>
     </main>
   )
 }
 
-export default Home
+export default Home;
