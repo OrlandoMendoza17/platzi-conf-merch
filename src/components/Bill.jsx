@@ -9,8 +9,8 @@ const Bill = () => {
     <aside className="Bill">
       <h2 className="Bill--title">Pedido</h2>
       <div className="Bill--items">
-        {cart.map(item=>(
-          <ListItem {...item} key={item.id}/>
+        {cart.map(product=>(
+          <ListItem product={product} key={product.id}/>
         ))}
       </div>
       <h3 className="Bill--price">

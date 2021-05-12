@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ListItem = (product) => {
+const ListItem = ({product}) => {
   const {title, price, count, image} = product;
   return (
     <div className="ListItem">
